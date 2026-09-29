@@ -1,3 +1,9 @@
+DROP TABLE IF EXISTS Enrollment;
+DROP TABLE IF EXISTS Course;
+DROP TABLE IF EXISTS Student;
+DROP TABLE IF EXISTS Faculty;
+DROP TABLE IF EXISTS Department;
+
 CREATE TABLE Department (
     DepartmentID INT PRIMARY KEY,
     DepartmentName VARCHAR(100)
@@ -12,20 +18,24 @@ CREATE TABLE Student (
     StudentID INT PRIMARY KEY,
     StudentName VARCHAR(100),
     DepartmentID INT,
-    FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID)
+    FOREIGN KEY (DepartmentID)
+        REFERENCES Department(DepartmentID)
 );
 
 CREATE TABLE Course (
     CourseID INT PRIMARY KEY,
     CourseName VARCHAR(100),
     FacultyID INT,
-    FOREIGN KEY (FacultyID) REFERENCES Faculty(FacultyID)
+    FOREIGN KEY (FacultyID)
+        REFERENCES Faculty(FacultyID)
 );
 
 CREATE TABLE Enrollment (
     EnrollmentID INT PRIMARY KEY,
     StudentID INT,
     CourseID INT,
-    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
-    FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
+    FOREIGN KEY (StudentID)
+        REFERENCES Student(StudentID),
+    FOREIGN KEY (CourseID)
+        REFERENCES Course(CourseID)
 );
