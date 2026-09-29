@@ -1,9 +1,3 @@
-DROP TABLE IF EXISTS Enrollment;
-DROP TABLE IF EXISTS Course;
-DROP TABLE IF EXISTS Student;
-DROP TABLE IF EXISTS Faculty;
-DROP TABLE IF EXISTS Department;
-
 CREATE TABLE Department (
     DepartmentID INT PRIMARY KEY,
     DepartmentName VARCHAR(100)
